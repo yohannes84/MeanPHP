@@ -1,0 +1,27 @@
+{
+  "name": "php",
+  "version": "1.0.0",
+  "description": "Personal Hobby Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Mangoose",
+    "Mangodb"
+  ],
+  "author": "Yohannes",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "express": "^4.17.2",
+    "mocha": "^9.1.4",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6",
+    "ng2-search-filter": "^0.5.1"
+  }
+}

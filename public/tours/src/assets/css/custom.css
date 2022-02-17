@@ -1,0 +1,13 @@
+.btn{
+    margin-left: 10px;
+    display: inline-block;
+}
+.container{
+    display: inline-block;
+    text-align: center;
+}
+
+.counter{
+    text-align: center;
+    float: right;
+}

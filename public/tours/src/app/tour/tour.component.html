@@ -1,0 +1,40 @@
+<p>tour works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Attraction</th>
+        <th scope="col">Country</th>
+        <th scope="col">Year</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+          <td>{{tour._id}}</td> 
+          <td>{{tour.attraction}}</td>
+          <td>{{tour.country}}</td>
+          <td>{{tour.year}}</td>
+          <td><button type="button" class="btn btn-outline-primary" (click) = "deleteTour()" routerLink = "/tours">Delete</button></td>
+          <td><a href="#" class="link-primary" routerLink = "/tours/{{tour._id}}/operator">Show Operators</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  Update Tour
+  <form>
+    <div class="form-row">
+      <div class="col-7">
+        <input type="text" class="form-control" placeholder="Attraction" id="attraction" name = "attraction" required [(ngModel)] = "updatedTour.attraction">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Country" id="country" name = "country" required [(ngModel)] = "updatedTour.country">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Year" id="year" name = "year" required [(ngModel)] = "updatedTour.year" value="year">
+      </div> 
+    </div>
+    <button class="btn btn-primary btn-sm" (click) = "update()" type="submit">Update Tour</button>
+    
+  </form>

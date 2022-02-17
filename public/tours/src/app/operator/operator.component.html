@@ -1,0 +1,41 @@
+<p>Operator Page</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">name</th>
+        <th scope="col">rating</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let operator of operators"> 
+          <td id="id">{{operator._id}}</td> 
+          <td id="name">{{operator.name}}</td>
+          <td id="rating">{{operator.rating}}</td>
+          <td><a href="#" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true" routerLink = "/tours/{{tour._id}}/operator/{{operator._id}}">update</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+<p>{{txtInfo}}</p>
+<form>
+  <div class="form-row">
+    <div class="col-7">
+      <input type="text" class="form-control" placeholder="Name" id="name" name = "name" required [(ngModel)] = "newOperator.name">
+    </div>
+    <br>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Rating" id="rating" name = "rating" required [(ngModel)] = "newOperator.rating">
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-primary btn-sm" (click) = "save()" type="submit">Add Operator</button>
+</form>
+
+
+{{newOperator.name}}
+{{newOperator.rating}}
+

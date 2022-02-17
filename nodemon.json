@@ -1,0 +1,9 @@
+{
+    "verbose": true,
+    "ignore" : ["public/*"],
+    "signal":"SIGHUP",
+    "env":{
+        "NODE_ENV":"development"
+    }
+    
+}

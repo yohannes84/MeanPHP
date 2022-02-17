@@ -1,0 +1,66 @@
+<p>tours works!</p>
+<form>
+  <div class="form-group">
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Search" name="searchTxt" id="attraction" [(ngModel)] = "searchTxt">
+    </div>
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Attraction</th>
+      <th scope="col">Country</th>
+      <th scope="col">Year</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let tour of tours | filter:searchTxt"> 
+        <td>{{tour._id}}</td> 
+        <td><a routerLink = "/tours/{{tour._id}}">{{tour.attraction}}</a></td>
+        <td>{{tour.country|countryCode}}</td>
+        <td>{{tour.year}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+  <div class="btn">
+    <button class="btn btn-primary btn-sm" (click) = "previous()" type="submit">Prev</button>
+    <button class="btn btn-primary btn-sm" (click) = "Next()" type="submit">Next</button>
+  </div>
+  <div class="counter">
+    <select (change)="selectChangeHandler($event)" class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected>select count </option>
+      <option value="4">4</option>
+      <option value="8">8</option>
+      <option value="16">16</option>
+    </select>
+    {{selectedValue}}
+  </div>
+</div>
+
+
+<br>
+Adding new Tour
+
+<form>
+  <div class="form-row">
+    <div class="col-xs-4">
+      <input type="text" class="form-control" placeholder="Attraction" id="attraction" name = "attraction" required [(ngModel)] = "newTour.attraction">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="form-control" placeholder="Country" id="country" name = "country" required [(ngModel)] = "newTour.country">
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="form-control" th:placeholder="Year" id="year" name = "year" required [(ngModel)] = "newTour.year">
+    </div> 
+  </div>
+  <button class="btn btn-primary btn-sm" (click) = "save()" type="submit">Add Tour</button>
+  
+</form>
+
+
